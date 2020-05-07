@@ -8,3 +8,6 @@ The pipeline should be paramatrizable for other databases (running PostgreSQL) a
 
 Data:
 ID, First_name, Lastname, CC
+
+https://www.confluent.io/blog/kafka-connect-deep-dive-jdbc-source-connector/
+jdbc:postgresql://postgres:5432/postgres_test?user=postgres_test&password=postgres_test
