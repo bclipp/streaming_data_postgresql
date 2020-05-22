@@ -10,6 +10,7 @@ services:
       - 5432:5432
     volumes:
       - ./config_pg/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./config_pg/customers.csv:/tmp/customers.csv
 
   adminer:
     image: adminer
