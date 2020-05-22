@@ -1,5 +1,4 @@
-## streaming_data_postgresql  
-  
+## Streaming CDC data
 
 ### Objective:  
 Build a streaming data pipeline to capture the CDC data on a PostgreSQL database that ouputs to a S3 location.
