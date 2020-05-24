@@ -12,7 +12,7 @@ Build a streaming data pipeline to capture the CDC data on a PostgreSQL database
 ### Data:
 ![schema](schema.png)
 
-### POC Explanation
+### POC Explanation:
 
 Kafka connect was used to meet the project requirements. There are a few options for this   
 task like Kafka Connect, Logstash and AWS DMS. I chose Kafka connect becouse is it can scale,   
