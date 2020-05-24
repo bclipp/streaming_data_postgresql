@@ -1,19 +1,11 @@
 
+1. sudo docker-compose up
+2. browse to http://localhost:3030/
+3. open up connectors
 
-setup:
-
-# sudo docker ps (find container id)
-
-# sudo docker exec -it (container id) bash
-
-# kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic postgres_test
-
-# CTRL+D
-
-
+4. Add
+# JDBC Source  Connector
 ```
-source
-
 connector.class=io.confluent.connect.jdbc.JdbcSourceConnector
 mode=timestamp
 timestamp.column.name=last_altered
@@ -26,11 +18,12 @@ catalog.pattern=postgres_test
 name=postgres_source
 connection.url=jdbc:postgresql://postgres:5432/postgres_test
 table.whitelist=customers
+```
 
+5. Then Add
+# AWS S3 Sink Connector
 
-
-sink
-
+```
 name=S3SinkConnector_postgres
 connector.class=io.confluent.connect.s3.S3SinkConnector
 topics=postgres_testcustomers
