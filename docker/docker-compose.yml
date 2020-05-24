@@ -21,6 +21,9 @@ services:
   kafka-cluster:
     image: landoop/fast-data-dev:cp3.3.0
     environment:
+      AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY
+      AWS_DEFAULT_REGION
       ADV_HOST: 127.0.0.1
       RUNTESTS: 0
     ports:
