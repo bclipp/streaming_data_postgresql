@@ -1,19 +1,32 @@
+
+
+setup:
+
+# sudo docker ps (find container id)
+
+# sudo docker exec -it (container id) bash
+
+# kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic postgres_test
+
+# CTRL+D
+
+
+```
 source
 
-{
-  "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
-  "mode": "timestamp",
-  "timestamp.column.name": "last_altered",
-  "topic.prefix": "postgres_test",
-  "validate.non.null": "false",
-  "connection.password": "postgres_test",
-  "tasks.max": "1",
-  "connection.user": "postgres_test",
-  "catalog.pattern": "postgres_test",
-  "name": "postgres_source",
-  "connection.url": "jdbc:postgresql://postgres:5432/postgres_test",
-  "table.whitelist": "customers"
-}
+connector.class=io.confluent.connect.jdbc.JdbcSourceConnector
+mode=timestamp
+timestamp.column.name=last_altered
+topic.prefix=postgres_test
+validate.non.null=false
+connection.password=postgres_test
+tasks.max=1
+connection.user=postgres_test
+catalog.pattern=postgres_test
+name=postgres_source
+connection.url=jdbc:postgresql://postgres:5432/postgres_test
+table.whitelist=customers
+
 
 
 sink
@@ -22,11 +35,11 @@ name=S3SinkConnector_postgres
 connector.class=io.confluent.connect.s3.S3SinkConnector
 topics=postgres_testcustomers
 tasks.max=1
-flush.size=100000,
-format.class=io.confluent.connect.s3.format.json.JsonFormat,
-partitioner.class=io.confluent.connect.storage.partitioner.DefaultPartitioner,
-schema.compatibility=NONE,  
+flush.size=100000
+format.class=io.confluent.connect.s3.format.json.JsonFormat
+partitioner.class=io.confluent.connect.storage.partitioner.DefaultPartitioner
+schema.compatibility=NONE
 schema.generator.class=io.confluent.connect.storage.hive.schema.DefaultSchemaGenerator
-s3.bucket.name=bclipp770,
+s3.bucket.name=bclipp770
 storage.class=io.confluent.connect.s3.storage.S3Storage    
-topics.dir=postgres_stream                                                                                                                                                                                            
+topics.dir=postgres_stream                                                                                                                                                                ```                            
