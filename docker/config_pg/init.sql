@@ -6,5 +6,5 @@ CREATE TABLE customers (
     last_altered TIMESTAMP NOT NULL
 );
 
-COPY customers(id,first_name,last_name,cc)
+COPY customers(first_name,last_name,cc, last_altered)
 FROM '/tmp/customers.csv' DELIMITER ',' CSV HEADER;
