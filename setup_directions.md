@@ -1,38 +1,29 @@
+source
 
-
-name=postgres_source
-connector.class=io.confluent.connect.jdbc.JdbcSourceConnector
-tasks.max=1
-connection.url=jdbc:postgresql://postgres:5432/postgres_test
-connection.user=postgres_test
-connection.password=postgres_test
-topic.prefix=postgres_test
-mode=timestamp
-timestamp.column.name=last_altered
-validate.non.null=false
-
-cat << EOF > postgres_source.json
 {
+  "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
+  "mode": "timestamp",
+  "timestamp.column.name": "last_altered",
+  "topic.prefix": "postgres_test",
+  "validate.non.null": "false",
+  "connection.password": "postgres_test",
+  "tasks.max": "1",
+  "connection.user": "postgres_test",
+  "catalog.pattern": "postgres_test",
   "name": "postgres_source",
-  "config": {
-    "connector.class": "io.confluent.connect.jdbc.JdbcSourceConnector",
-    "tasks.max": "1",
-    "connection.url": "jdbc:postgresql://postgres:5432/postgres_test",
-    "connection.user": "postgres_test",
-    "connection.password": "postgres_test",
-    "topic.prefix": "postgres_test",
-    "mode": "timestamp",
-    "timestamp.column.name": "last_altered",
-    "validate.non.null": false
-  }
+  "connection.url": "jdbc:postgresql://postgres:5432/postgres_test",
+  "table.whitelist": "customers"
 }
-EOF
-curl -X POST -H "Content-Type: application/json" -H "Accept: application/json" -d @postgres_source.json /api/kafka-connect/connectors
 
-docker ps (find container id)
 
-sudo docker exec -it (container id)  bash
+sink
 
-kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic postgres_test
-
-CTRL+D
+name=S3SinkConnector
+connector.class=io.confluent.connect.s3.S3SinkConnector
+topics=TopicName_S3SinkConnector
+tasks.max=1
+flush.size=
+format.class=
+schema.generator.class=
+s3.bucket.name=
+storage.class=
