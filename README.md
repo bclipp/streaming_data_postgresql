@@ -14,4 +14,6 @@ Build a streaming data pipeline to capture the CDC data on a PostgreSQL database
 
 ### POC Explanation
 
-Kafka connect was used to meet the project requirements. There are a few options for this task like Kafka Connect, Logstash and AWS DMS. I chose Kafka connect becouse is it can scale, platform neutral, follows open standards and is extremly flexible.
+Kafka connect was used to meet the project requirements. There are a few options for this   
+task like Kafka Connect, Logstash and AWS DMS. I chose Kafka connect becouse is it can scale,   
+platform neutral, follows open standards and is extremly flexible.  
