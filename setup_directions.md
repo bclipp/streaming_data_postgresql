@@ -4,7 +4,7 @@
 3. open up connectors
 
 4. Add
-# JDBC Source  Connector
+#### JDBC Source  Connector
 ```
 connector.class=io.confluent.connect.jdbc.JdbcSourceConnector
 mode=timestamp
@@ -21,7 +21,7 @@ table.whitelist=customers
 ```
 
 5. Then Add
-# AWS S3 Sink Connector
+#### AWS S3 Sink Connector
 
 ```
 name=S3SinkConnector_postgres
