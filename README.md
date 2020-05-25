@@ -16,10 +16,10 @@ Build a streaming data pipeline to capture the CDC data on a PostgreSQL database
 
 There are a few options for this task like
   * Kafka Connect
-  * Logstash 
+  * Logstash
   * AWS DMS
   * Spark Streaming
-  
+
 Major Benifits of Kafka Connect
 * Connector ecosystem is very large, so no code required.  
 * Scales as needed with little effort   
@@ -27,7 +27,12 @@ Major Benifits of Kafka Connect
 * For this project the output can be in a JSON, Avro , or Parquet format which can handle schema changes.  
 * The Kafka ecosystem has schema registry, which will help significantly with changing schemas.  
 
-### Docker 
+output will be in a json:
+```
+{"id":2,"first_name":"2","last_name":"2","cc":null,"last_altered":1590426878772}
+```
 
-For this POC I used Docker and a easy to use docker image [fast-data-dev](https://hub.docker.com/r/landoop/fast-data-dev/) that comes with a GUI. 
+### Docker
+
+For this POC I used Docker and a easy to use docker image [fast-data-dev](https://hub.docker.com/r/landoop/fast-data-dev/) that comes with a GUI.
 This docker image isn't recomended for a production system.
