@@ -32,6 +32,12 @@ output will be in a json:
 {"id":2,"first_name":"2","last_name":"2","cc":null,"last_altered":1590426878772}
 ```
 
+Using other databases:
+* To use another databasem ,simply add the jar to the kafka-connect-jdbc folder.
+* You can also start with CLASSPATH set to the absolute location of the jar (not the folder).
+* If you are using a cluster, each node needs to be setup with the jar.
+
+
 ### Docker
 
 For this POC I used Docker and a easy to use docker image [fast-data-dev](https://hub.docker.com/r/landoop/fast-data-dev/) that comes with a GUI.
