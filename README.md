@@ -21,7 +21,7 @@ There are a few options for this task like
   * Spark Streaming
 
 Major Benifits of Kafka Connect
-* Connector ecosystem is very large, so no code required.  
+* Source and Sink Connector ecosystem is very large, so no code required you can connect just about anything to anything.  
 * Scales as needed with little effort   
 * Platform neutral  
 * For this project the output can be in a JSON, Avro , or Parquet format which can handle schema changes.  
