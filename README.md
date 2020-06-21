@@ -40,5 +40,5 @@ Using other databases:
 
 ### Docker
 
-For this POC I used Docker and a easy to use docker image [fast-data-dev](https://hub.docker.com/r/landoop/fast-data-dev/) that comes with a GUI.
+For this POC I used Docker and an easy to use docker image [fast-data-dev](https://hub.docker.com/r/landoop/fast-data-dev/) that comes with a GUI.
 This docker image isn't recommended for a production system.
