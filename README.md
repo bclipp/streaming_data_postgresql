@@ -33,7 +33,7 @@ output will be in a json:
 ```
 
 Using other databases:
-* To use another databasem, simply add the jar to the kafka-connect-jdbc folder.
+* To use another database, simply add the jar to the kafka-connect-jdbc folder.
 * You can also start with CLASSPATH set to the absolute location of the jar (not the folder).
 * If you are using a cluster, each node needs to be set up with the jar.
 
